@@ -1,12 +1,12 @@
 <div align="center">
 
-![Header](https://capsule-render.vercel.app/api?type=waving&color=0:4B8BBE,100:FFD43B&height=220&section=header&text=NumPy%20Analyzer&fontSize=55&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=A%20menu-driven%20OOP%20toolkit%20for%20NumPy&descAlignY=55&descSize=18)
+![Header](https://capsule-render.vercel.app/api?type=soft&color=0:8E2DE2,100:4A00E0&height=220&section=header&text=NumPy%20Analyzer&fontSize=55&fontColor=ffffff&animation=twinkling&fontAlignY=35&desc=A%20modular%2C%20OOP-powered%20NumPy%20toolkit&descAlignY=55&descSize=18)
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&pause=1000&color=4B8BBE&center=true&vCenter=true&width=700&lines=Create+%7C+Analyze+%7C+Compute+with+NumPy;One+Class%2C+Six+Powerful+Modules;Built+with+Python+%2B+OOP+Principles;Menu-driven+console+application)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=20&pause=1000&color=8E2DE2&center=true&vCenter=true&width=700&lines=Now+Split+Into+Clean%2C+Reusable+Modules;One+Class%2C+Five+Mixins%2C+Zero+Clutter;Built+with+Python+%2B+NumPy+%2B+OOP)](https://git.io/typing-svg)
 
-![Python](https://img.shields.io/badge/Python-3.8+-4B8BBE?style=for-the-badge&logo=python&logoColor=white)
-![NumPy](https://img.shields.io/badge/NumPy-Powered-013243?style=for-the-badge&logo=numpy&logoColor=white)
-![OOP](https://img.shields.io/badge/Design-OOP-orange?style=for-the-badge)
+![Python](https://img.shields.io/badge/Python-3.8+-8E2DE2?style=for-the-badge&logo=python&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-Powered-4A00E0?style=for-the-badge&logo=numpy&logoColor=white)
+![Architecture](https://img.shields.io/badge/Architecture-Mixins-8E2DE2?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-Completed-brightgreen?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
 
@@ -18,44 +18,142 @@
 
 ## 📌 About This Project
 
-**NumPy Analyzer** is a console-based toolkit that combines the power of **NumPy** with
-**Object-Oriented Programming**. Everything runs through a single class, `DataAnalytics`,
-which lets you create arrays and run common data operations — math, searching, sorting,
-filtering, and statistics — all from one clean, menu-driven interface.
+**NumPy Analyzer** started as a single Python file and grew into a small, properly organized
+package. It still runs entirely from the console, but the logic now lives across dedicated
+modules that plug into one central class — `DataAnalytics` — instead of one giant file.
 
-> 🎯 **Objective:** Build a hands-on tool to practice NumPy array operations while applying
-> real OOP concepts — encapsulation, class methods, and static methods — instead of writing
-> everything as loose functions.
-
-### 💡 Why This Project?
-
-| | |
-|---|---|
-| 🧠 **Practical Learning** | Turns NumPy theory into a working, interactive tool |
-| 🏗️ **Real OOP** | Not just a class wrapper — uses encapsulation, `@classmethod`, and `@staticmethod` with a purpose |
-| 🧩 **Modular** | Each menu option maps to its own method, easy to read and easy to extend |
-| 🖱️ **Zero Setup Friction** | One file, one dependency (`numpy`), runs anywhere Python runs |
+> 🎯 **Objective:** Practice real NumPy array operations while applying OOP the way it's
+> actually used in bigger codebases — one class, multiple responsibilities, split cleanly
+> across files.
 
 ---
 
 ## 📖 Table of Contents
 
-- [✨ Features](#-features)
+- [🗂️ Project Structure](#️-project-structure)
+- [📋 File-by-File Breakdown](#-file-by-file-breakdown)
 - [🏛️ Architecture](#️-architecture)
-- [🧠 OOP Concepts in Action](#-oop-concepts-in-action)
+- [🧩 Why Mixins?](#-why-mixins)
+- [✨ Features](#-features)
 - [🎥 Video Explanation](#-video-explanation)
 - [📸 Screenshots](#-screenshots)
 - [🛠️ Tech Stack](#️-tech-stack)
 - [🚀 Getting Started](#-getting-started)
 - [💻 Full Walkthrough](#-full-walkthrough)
-- [📂 Project Structure](#-project-structure)
 - [📝 Assumptions](#-assumptions)
-- [🎓 Learning Outcomes](#-learning-outcomes)
+- [🧠 What This Project Demonstrates](#-what-this-project-demonstrates)
 - [🗺️ Roadmap](#️-roadmap)
 - [❓ FAQ](#-faq)
 - [🤝 Contributing](#-contributing)
 - [📜 License](#-license)
 - [👨‍💻 Author](#-author)
+
+---
+
+## 🗂️ Project Structure
+
+```
+numpy-analyzer/
+│
+├── 🚪 main.py                 # Entry point — creates DataAnalytics() and runs it
+├── 🧠 data_analytics.py       # The DataAnalytics class — combines all mixins + main menu
+├── 🧱 array_creation.py       # ArrayCreationMixin — create, index, slice arrays
+├── ➕ math_operations.py      # MathOperationsMixin — add, subtract, multiply, divide, dot product
+├── 🔗 combine_split.py        # CombineSplitMixin — combine & split arrays
+├── 🔍 search_sort_filter.py   # SearchSortFilterMixin — search, sort, filter
+├── 📊 aggregates_stats.py     # AggregatesStatsMixin — sum, mean, median, std, variance, stats
+├── 📦 requirements.txt        # Project dependency: numpy
+└── 📘 README.md               # You're reading it
+```
+
+---
+
+## 📋 File-by-File Breakdown
+
+| File | Class Inside | Responsibility |
+|---|---|---|
+| `main.py` | — | Starts the whole program |
+| `data_analytics.py` | `DataAnalytics` | Shared state, menu loop, the class/static/private helpers |
+| `array_creation.py` | `ArrayCreationMixin` | 1D / 2D / 3D array creation, indexing, slicing |
+| `math_operations.py` | `MathOperationsMixin` | Element-wise math + dot product |
+| `combine_split.py` | `CombineSplitMixin` | Stack two arrays / split one into parts |
+| `search_sort_filter.py` | `SearchSortFilterMixin` | Search a value, sort, filter by condition |
+| `aggregates_stats.py` | `AggregatesStatsMixin` | Sum, mean, median, std dev, variance, percentile, correlation |
+
+---
+
+## 🏛️ Architecture
+
+### Module Dependency Graph
+
+```mermaid
+graph TD
+    A["main.py"] --> B["data_analytics.py"]
+    B --> C["array_creation.py"]
+    B --> D["math_operations.py"]
+    B --> E["combine_split.py"]
+    B --> F["search_sort_filter.py"]
+    B --> G["aggregates_stats.py"]
+```
+
+### Class Composition
+
+```mermaid
+classDiagram
+    DataAnalytics --|> ArrayCreationMixin
+    DataAnalytics --|> MathOperationsMixin
+    DataAnalytics --|> CombineSplitMixin
+    DataAnalytics --|> SearchSortFilterMixin
+    DataAnalytics --|> AggregatesStatsMixin
+
+    class DataAnalytics {
+        +array
+        +second_array
+        +total_arrays_created$
+        -_has_array()
+        +run()
+        +get_numbers(prompt, count)$
+        +show_total_arrays()$
+    }
+    class ArrayCreationMixin {
+        +create_array()
+        +index_or_slice()
+    }
+    class MathOperationsMixin {
+        +math_operations()
+    }
+    class CombineSplitMixin {
+        +combine_or_split()
+    }
+    class SearchSortFilterMixin {
+        +search_sort_filter()
+    }
+    class AggregatesStatsMixin {
+        +aggregate_stats()
+    }
+```
+*(`$` marks class-level / static members, `-` marks a private/internal member)*
+
+---
+
+## 🧩 Why Mixins?
+
+Instead of writing five unrelated helper classes, each file defines a **mixin** — a small class
+that only makes sense combined with others. `DataAnalytics` then inherits from all five at once:
+
+```python
+class DataAnalytics(
+    ArrayCreationMixin,
+    MathOperationsMixin,
+    CombineSplitMixin,
+    SearchSortFilterMixin,
+    AggregatesStatsMixin,
+):
+    ...
+```
+
+The result still behaves as **one single class** — exactly what the project brief asks for —
+but the code behind it is split into readable, single-purpose files instead of one long script.
 
 ---
 
@@ -69,82 +167,7 @@ filtering, and statistics — all from one clean, menu-driven interface.
 | Search, Sort & Filter | 🔍 | Find a value, sort ascending/descending, filter by condition |
 | Aggregates | 📊 | Sum, mean, median, standard deviation, variance |
 | Statistics | 📈 | Percentiles and correlation coefficient between arrays |
-| OOP Design | 🏗️ | Encapsulated logic, one `@classmethod`, one `@staticmethod` |
-| Menu-Driven UI | 🖱️ | Clean console menu that loops until the user exits |
-
----
-
-## 🏛️ Architecture
-
-### Menu Flow
-
-```mermaid
-flowchart TD
-    A([Start]) --> B{Main Menu}
-    B -->|1| C[Create Array]
-    B -->|2| D[Math Operations]
-    B -->|3| E[Combine / Split]
-    B -->|4| F[Search / Sort / Filter]
-    B -->|5| G[Aggregates & Stats]
-    B -->|6| H([Exit])
-    C -->|optional| I[Index / Slice]
-    I --> B
-    C --> B
-    D --> B
-    E --> B
-    F --> B
-    G --> B
-```
-
-### Class Design
-
-```mermaid
-classDiagram
-    class DataAnalytics {
-        +array
-        +second_array
-        +total_arrays_created$
-        -__has_array()
-        +create_array()
-        +index_or_slice()
-        +math_operations()
-        +combine_or_split()
-        +search_sort_filter()
-        +aggregate_stats()
-        +run()
-        +get_numbers(prompt, count)$
-        +show_total_arrays()$
-    }
-```
-*(`$` marks class-level / static members)*
-
----
-
-## 🧠 OOP Concepts in Action
-
-**🔒 Encapsulation** — a private, name-mangled method guards every operation:
-```python
-def __has_array(self):
-    if self.array is None:
-        print("\nNo array found. Please create an array first.")
-        return False
-    return True
-```
-
-**🏷️ Class Method** — tracks state shared across every object of the class:
-```python
-@classmethod
-def show_total_arrays(cls):
-    print(f"\nTotal arrays created in this session: {cls.total_arrays_created}")
-```
-
-**⚙️ Static Method** — a utility that doesn't need `self` or `cls` at all:
-```python
-@staticmethod
-def get_numbers(prompt, count):
-    values = input(prompt).split()
-    return [float(v) for v in values[:count]]
-```
+| OOP Design | 🏗️ | Mixin-based class, one `@classmethod`, one `@staticmethod` |
 
 ---
 
@@ -152,17 +175,9 @@ def get_numbers(prompt, count):
 
 > 📌 *Drop your walkthrough video link below*
 
-[![Watch the video](https://img.shields.io/badge/▶️_Watch_Demo-red?style=for-the-badge)](PUT_YOUR_VIDEO_LINK_HERE)
+[![Watch the video](https://img.shields.io/badge/▶️_Watch_Demo-8E2DE2?style=for-the-badge)](PUT_YOUR_VIDEO_LINK_HERE)
 
 ---
-
-## 📸 Screenshots
-
-> 📌 *Add terminal screenshots or a GIF of the tool in action here*
-
-| Array Creation | Math Operations | Statistics |
-|---|---|---|
-| `PUT_IMAGE_LINK_HERE` | `PUT_IMAGE_LINK_HERE` | `PUT_IMAGE_LINK_HERE` |
 
 ---
 
@@ -191,11 +206,11 @@ cd numpy-analyzer
 python -m venv venv
 source venv/bin/activate      # on Windows: venv\Scripts\activate
 
-# 3. Install NumPy
-pip install numpy
+# 3. Install dependencies
+pip install -r requirements.txt
 
 # 4. Run the analyzer
-python numpy_analyzer.py
+python main.py
 ```
 
 ---
@@ -203,7 +218,7 @@ python numpy_analyzer.py
 ## 💻 Full Walkthrough
 
 <details>
-<summary>🧱 <b>1. Create a Numpy Array</b></summary>
+<summary>🧱 <b>array_creation.py</b> — Create a Numpy Array</summary>
 
 ```
 Select the type of array to create:
@@ -222,26 +237,7 @@ Array created successfully:
 </details>
 
 <details>
-<summary>✂️ <b>Indexing & Slicing</b></summary>
-
-```
-Choose an operation:
-1. Indexing
-2. Slicing
-3. Go Back
-Enter your choice: 2
-
-Enter the row range (start:end): 0:2
-Enter the column range (start:end): 1:3
-
-Sliced Array:
-[[20 30]
- [50 60]]
-```
-</details>
-
-<details>
-<summary>➕ <b>2. Perform Mathematical Operations</b></summary>
+<summary>➕ <b>math_operations.py</b> — Perform Mathematical Operations</summary>
 
 ```
 Choose a mathematical operation:
@@ -261,7 +257,7 @@ Result of Addition:
 </details>
 
 <details>
-<summary>🔗 <b>3. Combine or Split Arrays</b></summary>
+<summary>🔗 <b>combine_split.py</b> — Combine or Split Arrays</summary>
 
 ```
 Choose an option:
@@ -280,7 +276,7 @@ Combined Array (Vertical Stack):
 </details>
 
 <details>
-<summary>🔍 <b>4. Search, Sort, or Filter Arrays</b></summary>
+<summary>🔍 <b>search_sort_filter.py</b> — Search, Sort, or Filter Arrays</summary>
 
 ```
 Choose an option:
@@ -299,7 +295,7 @@ Sorted Array:
 </details>
 
 <details>
-<summary>📊 <b>5. Compute Aggregates and Statistics</b></summary>
+<summary>📊 <b>aggregates_stats.py</b> — Compute Aggregates and Statistics</summary>
 
 ```
 Choose an aggregate/statistical operation:
@@ -318,17 +314,6 @@ Median of Array: 35.0
 
 ---
 
-## 📂 Project Structure
-
-```
-numpy-analyzer/
-├── numpy_analyzer.py   # Main source code (DataAnalytics class)
-├── README.md           # You're reading it
-└── requirements.txt    # Project dependencies
-```
-
----
-
 ## 📝 Assumptions
 
 - All array elements are entered as numbers (converted to `float` internally for consistency).
@@ -339,20 +324,21 @@ numpy-analyzer/
 
 ---
 
-## 🎓 Learning Outcomes
+## 🧠 What This Project Demonstrates
 
-- ✅ Creating and reshaping NumPy arrays across 1D, 2D, and 3D
-- ✅ Applying encapsulation, class methods, and static methods correctly (not just for show)
-- ✅ Using NumPy's math, aggregate, and statistical functions in a real interactive flow
-- ✅ Structuring a multi-feature console app around a single, well-organized class
-- ✅ Writing a project that's documented well enough for someone else to run without help
+- ✅ Splitting one growing class across multiple files without breaking its behavior
+- ✅ Using mixins to keep multiple inheritance clean and purpose-driven
+- ✅ Correctly handling Python's private-name mangling limits across files
+- ✅ Applying `@classmethod` and `@staticmethod` where they actually belong, not just for show
+- ✅ Reshaping and operating on NumPy arrays across 1D, 2D, and 3D
+- ✅ Writing documentation clear enough for someone else to run the project unassisted
 
 ---
 
 ## 🗺️ Roadmap
 
 - [ ] Export results to CSV / JSON
-- [ ] Add unit tests with `pytest`
+- [ ] Add unit tests with `pytest` for each mixin
 - [ ] Wrap invalid inputs in proper `try/except` blocks
 - [ ] Build a lightweight GUI version (Tkinter or Streamlit)
 - [ ] Add broadcasting examples for mismatched array shapes
@@ -361,14 +347,14 @@ numpy-analyzer/
 
 ## ❓ FAQ
 
+**Q: Why split one class across so many files?**
+A: It mirrors how real projects grow — one class, one responsibility per file, instead of a single script that keeps getting longer.
+
 **Q: Do I need anything besides NumPy?**
-A: No — just Python 3.8+ and `numpy`. No other dependencies.
+A: No — just Python 3.8+ and `numpy`, installed via `requirements.txt`.
 
 **Q: What happens if I enter the wrong number of elements?**
-A: The array creation step expects an exact match; mismatched input will raise a reshape error, so double-check the count before hitting enter.
-
-**Q: Can I use this on arrays larger than what's shown in the examples?**
-A: Yes, the size is fully driven by what you enter at each prompt — the examples just keep things small and readable.
+A: Array creation expects an exact match; a mismatched count will raise a reshape error, so double-check before pressing enter.
 
 ---
 
@@ -397,6 +383,6 @@ This project is licensed under the **MIT License** — free to use, modify, and 
 
 Made with ❤️ and a lot of ☕
 
-![Footer](https://capsule-render.vercel.app/api?type=waving&color=0:FFD43B,100:4B8BBE&height=120&section=footer)
+![Footer](https://capsule-render.vercel.app/api?type=soft&color=0:4A00E0,100:8E2DE2&height=120&section=footer)
 
 </div>
