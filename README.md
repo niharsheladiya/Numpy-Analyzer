@@ -172,7 +172,6 @@ but the code behind it is split into readable, single-purpose files instead of o
 
 ## 🎥 Video Explanation
 
-> 📌 *Drop your walkthrough video link below*
 
 [![Watch the video](https://img.shields.io/badge/▶️_Watch_Demo-8E2DE2?style=for-the-badge)](https://drive.google.com/file/d/1xJXnSxfLRNhDaW1zQHrrQP2jQ0hEMnwt/view?usp=sharing)
 
