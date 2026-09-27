@@ -36,7 +36,6 @@ modules that plug into one central class — `DataAnalytics` — instead of one 
 - [🧩 Why Mixins?](#-why-mixins)
 - [✨ Features](#-features)
 - [🎥 Video Explanation](#-video-explanation)
-- [📸 Screenshots](#-screenshots)
 - [🛠️ Tech Stack](#️-tech-stack)
 - [🚀 Getting Started](#-getting-started)
 - [💻 Full Walkthrough](#-full-walkthrough)
@@ -176,8 +175,6 @@ but the code behind it is split into readable, single-purpose files instead of o
 > 📌 *Drop your walkthrough video link below*
 
 [![Watch the video](https://img.shields.io/badge/▶️_Watch_Demo-8E2DE2?style=for-the-badge)](PUT_YOUR_VIDEO_LINK_HERE)
-
----
 
 ---
 
@@ -379,10 +376,21 @@ This project is licensed under the **MIT License** — free to use, modify, and 
 
 ## 👨‍💻 Author
 
-**Nihar Sheladiya**
+<img src="https://api.dicebear.com/7.x/initials/svg?seed=Nihar%20Sheladiya&backgroundColor=8E2DE2" width="90" height="90" alt="Nihar Sheladiya"/>
+
+### Nihar Sheladiya
+
+*PUT_YOUR_TAGLINE_HERE — e.g. "Python Developer | Learning OOP & Data Analysis with NumPy"*
+
+Built this project to move past notebook-style code and actually structure a NumPy-based
+tool the way a real, class-based Python project would be organized.
+
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](PUT_YOUR_GITHUB_LINK_HERE)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](PUT_YOUR_LINKEDIN_LINK_HERE)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:PUT_YOUR_EMAIL_HERE)
 
 Made with ❤️ and a lot of ☕
 
-![Footer](https://capsule-render.vercel.app/api?type=soft&color=0:4A00E0,100:8E2DE2&height=120&section=footer)
+
 
 </div>
